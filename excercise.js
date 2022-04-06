@@ -161,3 +161,54 @@ const randomInRange = (min, max) => {
 }
 
 console.log(randomInRange(10, 500));
+
+/**
+ * 
+ * @param {a, b} arr, num/bool
+ * @returns array
+ */
+
+const filteredNumbers = (a, b) => {
+    return a.filter((el) => el != b);
+}
+
+console.log("Funcion filteredNumbers: ")
+console.log(filteredNumbers([1, 2, 3, 4], 2))
+console.log(filteredNumbers([1, 3, 4, 1], 1));
+console.log(filteredNumbers([1, 1, 1, 3, 4], 1));
+console.log(filteredNumbers([4, 2, 4, 5, 6], 7));
+console.log(filteredNumbers([4, 2, false, 5, 6], false));
+
+
+/**
+ * 
+ * @param {a, b} arr, string
+ * @returns array
+ */
+
+const sortFunction = (a, order = "asc") => {
+    return order === "asc" ? a.sort() : a.sort().reverse();
+}
+
+console.log("Funcion sortFunction");
+console.log(sortFunction([2, 3, 4, 1], "asc"));
+console.log(sortFunction([6, 2, 8, 1, 5], "desc"));
+console.log(sortFunction(["uva", "manzana", "naranja"], "asc"));
+console.log(sortFunction(["t", "b", "s", "z", "m"]));
+console.log(sortFunction(["t", "b", "s", "z", "m"], "desc"));
+
+/**
+ * 
+ * @param {a, b} arr, arr
+ * @returns array
+ */
+
+const arrConcat = (a, b) => {
+    return [...new Set([...a, ...b].sort())];
+}
+
+console.log("Funcion arrConcat");
+console.log(arrConcat([2, 3, 4, 1], [3, 4, 5]));
+console.log(arrConcat([6, 2, 8, 1, 9], [8, 9]));
+console.log(arrConcat(["uva", "manzana", "naranja"], ["manzana", "naranja", "pera", "mango"]));
+console.log(arrConcat(["t", "b", "s", "z"], ["t", "z", "s", "m"]));
