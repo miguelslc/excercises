@@ -212,3 +212,43 @@ console.log(arrConcat([2, 3, 4, 1], [3, 4, 5]));
 console.log(arrConcat([6, 2, 8, 1, 9], [8, 9]));
 console.log(arrConcat(["uva", "manzana", "naranja"], ["manzana", "naranja", "pera", "mango"]));
 console.log(arrConcat(["t", "b", "s", "z"], ["t", "z", "s", "m"]));
+
+
+/**
+ * 
+ * @param {a, b} arr, num
+ * @returns array
+ */
+
+//Una funcion que reciba un array y un numero y devuelva
+//La suma de los valores del array mayores al parametro b
+
+const arrReduceGreaterThan = (a, b) => {
+    return a.sort().reduce((total, i) => (i > b) ? total + i : 0, 0);
+}
+
+console.log("Funcion arrReduceGreaterThan");
+console.log(arrReduceGreaterThan([2, 3, 4, 1], 3));
+console.log(arrReduceGreaterThan([6, 2, 8, 1, 9], 9));
+console.log(arrReduceGreaterThan([4, 5, 6, 1, 3, 2, 9, 7], 3));
+console.log(arrReduceGreaterThan([1, 2, 3, 4, 5, 6], 5));
+
+
+/**
+ * 
+ * @param {min, max} num, num
+ * @returns array
+ */
+
+//Una funcion que reciba un array y un numero y devuelva
+//La suma de los valores del array mayores al parametro b
+
+const arrFilledFromMinToMax = (min, max) => {
+    return Array(max - min + 1).fill(min).map((prev, next) => prev + next);
+}
+
+console.log("Funcion arrFilled: ");
+console.log(arrFilledFromMinToMax(1, 3));
+console.log(arrFilledFromMinToMax(5, 9));
+console.log(arrFilledFromMinToMax(2, 3));
+console.log(arrFilledFromMinToMax(1, 5));
