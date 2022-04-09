@@ -252,3 +252,95 @@ console.log(arrFilledFromMinToMax(1, 3));
 console.log(arrFilledFromMinToMax(5, 9));
 console.log(arrFilledFromMinToMax(2, 3));
 console.log(arrFilledFromMinToMax(1, 5));
+
+
+/**
+ * 
+ * @param {arr obj} 
+ * @returns array
+ */
+
+//Una funcion que reciba un array y un numero y devuelva
+//La suma de los valores del array mayores al parametro b
+
+const cityReducer = (arr) => {
+    return arr.map(el => `${el.addres}, ${el.city} - ${el.state}, ${el.zipcode}, ${el.country}`)
+}
+
+console.log("Funcion cityReducer: ");
+console.log(cityReducer([{
+    addres: "Av. Rivadavia 8000",
+    city: "CABA",
+    state: "Buenos Aires",
+    zipcode: "1615",
+    country: "AR",
+}, {
+    addres: "Av. America 500",
+    city: "Saenz Peña",
+    state: "3 de Febrero",
+    zipcode: "1676",
+    country: "AR",
+}, {
+    addres: "Principal Avenue 123",
+    city: "Miami",
+    state: "Florida",
+    zipcode: "11035",
+    country: "USA",
+}]));
+
+
+/**
+ * 
+ * @param {key, value} arr, arr
+ * @returns obj
+ */
+
+const objectKeyValueFromArray = (key, val) => {
+    return Object.fromEntries(key.map((el, i) => [el, val[i]]))
+}
+
+console.log("Funcion onjKeyValueFromArray: ");
+console.log(objectKeyValueFromArray(["a", "b", "c", "d"], [1, 5, 3, 4]));
+
+/**
+ * 
+ * @param {date, date} 
+ * @returns bool
+ */
+
+const _isDateEqual = (date1, date2) => {
+    return (date1.toString() === date2.toString());
+}
+
+console.log("Funcion _isDateEqual: ");
+console.log(_isDateEqual(
+    new Date('2022/04/08 06:30:00'),
+    new Date('2022/04/08 06:29:00'),
+));
+console.log(_isDateEqual(
+    new Date('2022/04/08 06:30:00'),
+    new Date('2022/04/08 06:30:00'),
+));
+console.log(_isDateEqual(
+    new Date('2021/04/08 06:30:00'),
+    new Date('2022/04/08 06:30:00'),
+));
+
+
+const differenceDay = (date1, date2) => {
+    return ((date2 - date1) / (1000 * 3600 * 24))
+}
+
+console.log("Funcion differenceDay: ");
+console.log(differenceDay(
+    new Date('2022/04/08 06:30:00'),
+    new Date('2022/04/08 06:29:00'),
+));
+console.log(differenceDay(
+    new Date('2022/04/08 06:30:00'),
+    new Date('2022/04/08 06:30:00'),
+));
+console.log(differenceDay(
+    new Date('2021/04/08 06:30:00'),
+    new Date('2022/04/08 06:30:00'),
+));
